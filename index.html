@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        background-color: #ffffff;
+      }
+      h1 {
+        color: #1a64d6;
+        font-size: 34px;
+        line-height: 48px;
+        text-align: center;
+        margin: 0;
+        display: block;
+        font-family: Helvetica;
+      }
+
+      h2 {
+        font-weight: 400;
+        margin: 0;
+        line-height: 48px;
+        /* color: #272044; */
+        text-align: center;
+        font-size: 34px;
+        opacity: 1;
+        font-family: Helvetica;
+      }
+      h3 {
+        font-weight: bold;
+        display: block;
+        font-family: Helvetica;
+      }
+      ul {
+        padding: 0;
+        display: block;
+        text-align: center;
+      }
+      li {
+        color: #272044;
+        text-align: center;
+        display: block;
+        margin: 6 auto;
+        border-radius: 10px;
+        padding: 10px 0;
+      }
+
+      li:hover {
+        background-color: #fefbef;
+        max-width: 400px;
+        margin: 0 auto;
+        transition: all 200ms ease-in-out;
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 16px 24px;
+        background-color: #1a64d6;
+        line-height: 22px;
+        color: #ffffff;
+        margin: 20px auto;
+        font-size: 16px;
+        border-radius: 30px;
+        box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+        transition: all 200ms ease-in-out;
+        border-width: thin;
+          border: 1px solid #1a64d6;
+      }
+      button:hover {
+        background: transparent;
+        cursor: pointer;
+        color: #1a64d6;
+        border: 1px solid #1a64d6;
+      }
+
+      p {
+        text-align: center;
+        display: block;
+        font-family: monospace;
+        font-size: 18px;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class>🌤<br />Currently 21° in Tokyo</h1>
+    <h2>13° / <strong>23°</strong></h2>
+    <ul>
+      <li class>
+        <h3>🌧Tomorrow</h3>
+        <p class>10° / <strong>22°</strong></p>
+      </li>
+      <li>
+        <h3>
+          🌥 Saturday
+        </h3>
+        <p class>15° / <strong>17°</strong></p>
+      </li>
+
+      <li class>
+        <h3>
+          ☀️ Sunday
+        </h3>
+        <p class>25° / <strong>28°</strong></p>
+      </li>
+    </ul>
+    <button>
+      Change city
+    </button>
+    <p class>Coded by Lorena Alvarez</p>
+  </body>
+</html>
