@@ -3,113 +3,149 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="favicon.ico" text="⭐" />
+    <link
+      rel="icon"
+      href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/sun-with-face_1f31e.png"
+    />
+    <title>⚡️ Weather App</title>
     <style>
-      body {
-        background-color: #ffffff;
+      body{
+        background-color: aliceblue;
       }
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
       h1 {
         color: #1a64d6;
         font-size: 34px;
         line-height: 48px;
-        text-align: center;
         margin: 0;
-        display: block;
-        font-family: Helvetica;
       }
 
       h2 {
-        font-weight: 400;
         margin: 0;
-        line-height: 48px;
-        /* color: #272044; */
-        text-align: center;
+
         font-size: 34px;
-        opacity: 1;
-        font-family: Helvetica;
+        line-height: 48px;
+        font-weight: 400;
       }
-      h3 {
-        font-weight: bold;
-        display: block;
-        font-family: Helvetica;
-      }
+
       ul {
         padding: 0;
-        display: block;
-        text-align: center;
       }
+
       li {
-        color: #272044;
+        list-style: none;
         text-align: center;
-        display: block;
-        margin: 6 auto;
-        border-radius: 10px;
         padding: 10px 0;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+        margin: 0 auto;
       }
 
       li:hover {
-        background-color: #fefbef;
-        max-width: 400px;
-        margin: 0 auto;
-        transition: all 200ms ease-in-out;
+        background: pink;
+        color: purple;
+      }
+
+      p {
+        font-size: 18px;
+        opacity: 0.7;
+        text-align: center;
+        font-family: monospace;
       }
 
       button {
         display: block;
         margin: 20px auto;
-        padding: 16px 24px;
-        background-color: #1a64d6;
-        line-height: 22px;
-        color: #ffffff;
-        margin: 20px auto;
-        font-size: 16px;
-        border-radius: 30px;
-        box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
-        transition: all 200ms ease-in-out;
-        border-width: thin;
-          border: 1px solid #1a64d6;
-      }
-      button:hover {
-        background: transparent;
-        cursor: pointer;
-        color: #1a64d6;
         border: 1px solid #1a64d6;
+        background: #1a64d6;
+        color: #fff;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 16px 24px;
+        border-radius: 30px;
+        transition: all 200ms ease;
+        box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+        cursor: pointer;
       }
 
-      p {
-        text-align: center;
-        display: block;
-        font-family: monospace;
-        font-size: 18px;
-        opacity: 0.7;
+      button:hover {
+        background: white;
+        color: #1a64d6;
+        border: 1px solid #1a64d6;
       }
     </style>
   </head>
   <body>
-    <h1 class>🌤<br />Currently 21° in Tokyo</h1>
-    <h2>13° / <strong>23°</strong></h2>
-    <ul>
-      <li class>
-        <h3>🌧Tomorrow</h3>
-        <p class>10° / <strong>22°</strong></p>
-      </li>
-      <li>
-        <h3>
-          🌥 Saturday
-        </h3>
-        <p class>15° / <strong>17°</strong></p>
-      </li>
+      <h1 id="city">
+        🌤
+        <br />
+        Currently 21 C° in Tokyo
+      </h1>
+      <h2>13° / <strong>23°</strong></h2>
+      <ul>
+        <li>
+          <h3>
+            🌧Tomorrow
+          </h3>
+          <p>10° / <strong>22°</strong></p>
+        </li>
+        <li>
+          <h3>
+            🌥 Saturday
+          </h3>
+          <p>15° / <strong>17°</strong></p>
+        </li>
+        <li>
+          <h3>
+            ☀️ Sunday
+          </h3>
+          <p>25° / <strong>28°</strong></p>
+        </li>
+      </ul>
 
-      <li class>
-        <h3>
-          ☀️ Sunday
-        </h3>
-        <p class>25° / <strong>28°</strong></p>
-      </li>
-    </ul>
-    <button>
-      Change city
-    </button>
-    <p class>Coded by Lorena Alvarez</p>
+      <button>
+        Change city
+      </button>
+      <p>
+        Coded by Lorena Alvarez
+      </p>
+    </div>
+    <script>
+      let button = document.querySelector("button");
+      let city = document.querySelector("#city");
+      let icon = ["🌞", "🌚", "🌝", "❄️", "⛈", "🌈"];
+
+      button.addEventListener("click", changeCity);
+
+      function randomIcon() {
+        return Math.floor(4 * Math.random());
+      }
+
+      function changeCity() {
+        let currentCity = prompt("What city do you live in?");
+        currentCity = currentCity.toUpperCase().trim();
+        let currentTemperature = prompt("What temperature is it?");
+
+        if (currentCity !== city) {
+          city.innerHTML =
+            icon[randomIcon()] +
+            "<br/>" +
+            "Currently " +
+            currentTemperature +
+            " C°" +
+            " in " +
+            currentCity;
+        }
+      }
+    </script>
   </body>
 </html>
