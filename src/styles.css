@@ -46,20 +46,27 @@ ul,
 form {
   text-align: center;
   text-decoration: none;
+  list-style: none;
 }
 ul {
   text-decoration: none;
+  list-style: none;
 }
 .button {
   color: #fbc8d4;
   margin: 50px;
 }
+
 .btn-outline-success {
   color: pink;
   border-color: pink;
   margin: 50px;
 }
-
+.btn-outline-success:hover {
+  background-color: pink;
+  color: #5d4db5;
+  border-color: #5d4db5;
+}
 .days {
   text-align: center;
   color: #5d4db5;
@@ -79,10 +86,11 @@ footer {
   font-weight: 600;
 }
 a {
-  color: #5d4db5;
+  color: pink;
 }
 a:hover {
   text-decoration: none;
+  color: #5d4db5;
 }
 .container {
   height: auto;
